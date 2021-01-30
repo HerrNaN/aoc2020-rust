@@ -1,0 +1,11 @@
+name: Advent of Code (Rust Edition!)
+version: "1.0"
+author: Karl Wikström
+about: Utility program for running solutions for Advent of Code 2020
+args:
+    - day:
+        about: Sets the day to run
+        value_name: DAY
+    - part:
+        about: Sets the part to run
+        value_name: PART
