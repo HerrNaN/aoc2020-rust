@@ -10,11 +10,8 @@ pub mod day01;
 
 pub fn day_map() -> HashMap<Day,HashMap<Part,Box<dyn Solution>>> {
     vec![
-        (1 as Day, 
-            vec![  
-                (Part1, day01::DAY01A),
-                (Part2, day01::DAY01A),
-            ].into_iter().collect()
-        ),
-    ].into_iter().collect()
+        (1, vec![(Part1, Box::new(day01::DAY01A) as Box<dyn Solution>),
+                 (Part2, Box::new(day01::DAY01B) as Box<dyn Solution>)
+                 ].into_iter().collect()),
+        ].into_iter().collect()
 }

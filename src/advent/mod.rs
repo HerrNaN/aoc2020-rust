@@ -1,6 +1,3 @@
-use std::collections::HashMap;
-use std::iter::FromIterator;
-
 pub type Day = i32;
 
 #[derive(Hash, Eq, PartialEq, Clone)]
@@ -17,7 +14,7 @@ impl Part {
         }
     }
 }
-
+#[derive(Clone)]
 pub struct Sol<I,O> {
     pub day:  Day,
     pub part: Part,
@@ -35,7 +32,7 @@ pub trait Solution {
 
 impl<I: Clone,O: Clone> Solution for Sol<I,O> {
     fn print_day_and_part(&self) {
-        println!("Day {day}, {part}", day=self.day, part=self.part.show());
+        println!("--- Day {day}: {part} ---", day=self.day, part=self.part.show());
     }
 
     fn run(&self, input: String) -> String {
