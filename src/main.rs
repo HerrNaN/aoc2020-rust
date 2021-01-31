@@ -11,10 +11,21 @@ use clap::{App, load_yaml};
 fn main() {
     let yaml = load_yaml!("../cli.yaml");
     let matches = App::from(yaml).get_matches();
-    if let Some(s) = matches.value_of("day") {
-        match s.parse::<i32>() {
-            Ok(d) => run_day(d),
-            _ => println!("Couldn't parse DAY as a Day")
+
+    if let Some(ds) = matches.value_of("day"){
+        match ds.parse::<i32>() {
+            Ok(d) => {
+                if let Some(ps) = matches.value_of("part") {
+                    match ps.parse::<i32>() {
+                        Ok(1) => run_part(d, Part1),
+                        Ok(2) => run_part(d, Part2),
+                        _ => println!("couldn't parse {} as a Part", ps)
+                    }
+                } else {
+                    run_day(d)
+                }
+            },
+            _ => println!("Couldn't parse {} as a Day", ds)
         }
     }
 }
