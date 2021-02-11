@@ -7,6 +7,8 @@ use crate::advent::Part::Part2;
 use crate::advent::Part::Part1;
 use crate::advent::Day;
 use clap::{App, load_yaml};
+#[macro_use] extern crate scan_fmt;
+
 
 fn main() {
     let yaml = load_yaml!("../cli.yaml");
