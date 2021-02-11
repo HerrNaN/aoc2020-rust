@@ -1,4 +1,3 @@
-use std::convert::TryFrom;
 use crate::advent;
 
 type Password = String;
@@ -21,7 +20,7 @@ pub const DAY02B: advent::Sol<Vec<(Policy, Password)>, i32> = advent::Sol {
 };
 
 fn solve2(entries: Vec<(Policy, Password)>) -> i32 {
-    entries.into_iter().map(|(pol, pass)| if is_valid2(pol, pass) {1} else {0}).sum()
+    entries.into_iter().filter(|(pol, pass)| is_valid2(*pol, pass.to_string())).count() as i32
 }
 
 fn is_valid2((a,b,c): Policy, pass: Password) -> bool {
@@ -34,7 +33,7 @@ fn solve1(entries: Vec<(Policy, Password)>) -> i32 {
 }
 
 fn is_valid1((from, to, c): Policy, pass: Password) -> bool {
-    let count = i32::try_from(pass.chars().filter(|a| *a == c).count()).unwrap();
+    let count = pass.chars().filter(|a| *a == c).count() as i32;
     return count >= from && count <= to
 }
 
