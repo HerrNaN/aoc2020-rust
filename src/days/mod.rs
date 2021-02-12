@@ -6,9 +6,10 @@ use crate::advent::Part::Part2;
 use std::collections::HashMap;
 use std::boxed::Box;
 
-pub mod day01;
-pub mod day02;
-pub mod day03;
+mod day01;
+mod day02;
+mod day03;
+mod day04;
 
 pub fn day_map() -> HashMap<Day,HashMap<Part,Box<dyn Solution>>> {
     vec![

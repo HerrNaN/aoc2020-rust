@@ -21,7 +21,7 @@ pub struct Sol<I,O> {
 
     pub parse: fn(String) -> I,
     pub solve: fn(I) -> O,
-    pub show:  fn(O) -> String,
+    pub show:  fn(&O) -> String,
 }
 
 pub trait Solution {
@@ -36,6 +36,6 @@ impl<I: Clone,O: Clone> Solution for Sol<I,O> {
     }
 
     fn run(&self, input: String) -> String {
-        return (self.show)((self.solve)((self.parse)(input)));
+        return (self.show)(&(self.solve)((self.parse)(input)));
     }
 }

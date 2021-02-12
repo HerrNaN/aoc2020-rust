@@ -8,7 +8,7 @@ pub const DAY02A: advent::Sol<Vec<(Policy, Password)>, i32> = advent::Sol {
     part: advent::Part::Part1,
     parse: parse,
     solve: solve1,
-    show: |x| x.to_string(),
+    show: i32::to_string,
 };
 
 pub const DAY02B: advent::Sol<Vec<(Policy, Password)>, i32> = advent::Sol {
@@ -16,7 +16,7 @@ pub const DAY02B: advent::Sol<Vec<(Policy, Password)>, i32> = advent::Sol {
     part: advent::Part::Part2,
     parse: parse,
     solve: solve2,
-    show: |x| x.to_string(),
+    show: i32::to_string,
 };
 
 fn solve2(entries: Vec<(Policy, Password)>) -> i32 {
