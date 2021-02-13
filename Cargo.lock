@@ -200,6 +200,8 @@ name = "rust"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "lazy_static",
+ "regex",
  "scan_fmt",
 ]
 

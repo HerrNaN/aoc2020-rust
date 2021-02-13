@@ -7,7 +7,7 @@ pub const DAY01A: advent::Sol<Vec<i32>, i32> = advent::Sol {
     part: advent::Part::Part1,
     parse: parse1,
     solve: solve1,
-    show: |x| x.to_string(),
+    show: i32::to_string,
 };
 
 pub const DAY01B: advent::Sol<Vec<i32>, i32> = advent::Sol {
@@ -15,7 +15,7 @@ pub const DAY01B: advent::Sol<Vec<i32>, i32> = advent::Sol {
     part: advent::Part::Part2,
     parse: parse1,
     solve: solve2,
-    show: |x| x.to_string(),
+    show: i32::to_string,
 };
 
 fn parse1(s: String) -> Vec<i32> {

@@ -22,5 +22,8 @@ pub fn day_map() -> HashMap<Day,HashMap<Part,Box<dyn Solution>>> {
         (3, vec![(Part1, Box::new(day03::DAY03A) as Box<dyn Solution>),
                  (Part2, Box::new(day03::DAY03B) as Box<dyn Solution>)
                  ].into_iter().collect()),
+        (4, vec![(Part1, Box::new(day04::DAY04A) as Box<dyn Solution>),
+                 (Part2, Box::new(day04::DAY04B) as Box<dyn Solution>)
+                 ].into_iter().collect()),
         ].into_iter().collect()
 }
